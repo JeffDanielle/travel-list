@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+// State is an internal data which owned by a component; meanwhile, props are external data which is passed from a parent component.
+
 const Form = () => {
 
     const [description, setDescription] = useState("");
