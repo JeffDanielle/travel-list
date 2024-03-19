@@ -6,7 +6,7 @@ const PackingList = () => {
         <div className="list" style={{ overflow: 'hidden' }}>
             <ul style={{ overflow: 'hidden' }}>
                 {itemData.map((item) => {
-                    return <Item item={item} />
+                    return <Item key={item.id} item={item} />
                 })}
             </ul>
         </div>
