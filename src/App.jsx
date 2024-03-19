@@ -1,14 +1,19 @@
 import { useState } from 'react'
-import './App.css'
+import './custom.css'
+import Logo from "./components/Header";
+import Form from "./components/Form";
+import PackingList from "./components/PackingList";
+import Stats from "./components/Stats";
 
 function App() {
 
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
+    <div className='app'>
+      <Logo />
+      <Form />
+      <PackingList />
+      <Stats />
+    </div>
   )
 }
 
