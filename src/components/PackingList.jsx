@@ -1,9 +1,15 @@
+import itemData from '../data/itemData.jsx'
+import Item from './ItemRender.jsx'
+
 const PackingList = () => {
     return (
-        <div className="list">
-            LIST
+        <div className="list" style={{ overflow: 'hidden' }}>
+            <ul style={{ overflow: 'hidden' }}>
+                {itemData.map((item) => {
+                    return <Item item={item} />
+                })}
+            </ul>
         </div>
-
     );
 }
 
