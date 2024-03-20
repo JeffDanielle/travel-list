@@ -1,12 +1,12 @@
 import itemData from '../data/itemData.jsx'
 import Item from './ItemRender.jsx'
 
-const PackingList = ({ items, onDelete }) => {
+const PackingList = ({ items, onDelete, onCheck }) => {
     return (
         <div className="list" style={{ overflow: 'hidden' }}>
             <ul style={{ overflow: 'hidden' }}>
                 {items.map((item) => {
-                    return <Item key={item.id} item={item} onDelete={onDelete} />
+                    return <Item key={item.id} item={item} onDelete={onDelete} onCheck={onCheck} />
                 })}
             </ul>
         </div>
