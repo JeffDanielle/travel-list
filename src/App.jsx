@@ -6,12 +6,16 @@ import PackingList from "./components/PackingList";
 import Stats from "./components/Stats";
 
 function App() {
+  const [listItems, setListItems] = useState([]);
 
+  const handleAdd = (item) => {
+    setListItems((items) => [...items, item]);
+  }
   return (
     <div className='app'>
       <Logo />
-      <Form />
-      <PackingList />
+      <Form handleAddList={handleAdd} />
+      <PackingList items={listItems} />
       <Stats />
     </div>
   )

@@ -1,11 +1,11 @@
 import itemData from '../data/itemData.jsx'
 import Item from './ItemRender.jsx'
 
-const PackingList = () => {
+const PackingList = ({ items }) => {
     return (
         <div className="list" style={{ overflow: 'hidden' }}>
             <ul style={{ overflow: 'hidden' }}>
-                {itemData.map((item) => {
+                {items.map((item) => {
                     return <Item key={item.id} item={item} />
                 })}
             </ul>
