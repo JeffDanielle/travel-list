@@ -28,12 +28,17 @@ function App() {
       )
     )
   }
+
+  const handleClearList = () => {
+    const confirm = window.confirm('Are you sure you want to clear the list?');
+    if (confirm) setListItems([]);
+  }
   console.log(listItems)
   return (
     <div className='app'>
       <Logo />
       <Form handleAddList={handleAdd} />
-      <PackingList items={listItems} onDelete={handleDelete} onCheck={handleCheck} />
+      <PackingList items={listItems} onDelete={handleDelete} onCheck={handleCheck} handleClear={handleClearList} />
       <Stats items={listItems} numPacks={listItems} />
     </div>
   )
