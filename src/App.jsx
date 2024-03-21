@@ -7,15 +7,20 @@ import Stats from "./components/Stats";
 
 function App() {
   const [listItems, setListItems] = useState([]);
+  const numItems = listItems.length
 
+  // Adding an item
   const handleAdd = (item) => {
     setListItems((items) => [...items, item]);
   }
 
+
+  // Deleting an item
   const handleDelete = (id) => {
     setListItems((items) => items.filter((item) => item.id !== id))
   }
 
+  // Updating the item's packed status
   const handleCheck = (id) => {
     setListItems((items) =>
       items.map((item) =>
@@ -29,7 +34,7 @@ function App() {
       <Logo />
       <Form handleAddList={handleAdd} />
       <PackingList items={listItems} onDelete={handleDelete} onCheck={handleCheck} />
-      <Stats />
+      <Stats items={listItems} numPacks={listItems} />
     </div>
   )
 }
